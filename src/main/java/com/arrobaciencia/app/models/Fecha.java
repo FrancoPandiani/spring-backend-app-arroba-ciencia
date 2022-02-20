@@ -1,7 +1,6 @@
 package com.arrobaciencia.app.models;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,14 +12,11 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-
 import com.arrobaciencia.app.utils.ConstantesApp;
 
 @Entity
 @Table(name = "fechas")
 public class Fecha implements Serializable {
-
-	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
