@@ -39,23 +39,6 @@ public class FechaController {
 
 	}
 
-	@PutMapping("/{id}")
-	public ResponseEntity<?> update (@RequestBody Fecha fechaReservada, @PathVariable(value = "id") long fechaid) {
-
-		Optional<Fecha> fechaOp = fechaService.findById(fechaid);
-
-		if (!fechaOp.isPresent()) {
-			return ResponseEntity.notFound().build();
-		}
-
-		Fecha fecha = fechaOp.get();
-		fecha.setCantChicos(fechaReservada.getCantChicos());
-		fecha.setEstaReservada(true);
-		fecha.setMailRerserva(fechaReservada.getMailRerserva());
-
-		return ResponseEntity.status(HttpStatus.CREATED).body(fechaService.save(fecha));
-
-	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id) {
