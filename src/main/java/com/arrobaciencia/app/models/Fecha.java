@@ -13,12 +13,15 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import com.arrobaciencia.app.utils.ConstantesApp;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 
 @Entity
 @Table(name = "fechas")
 public class Fecha implements Serializable {
-
-	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,69 +60,7 @@ public class Fecha implements Serializable {
 	@PrePersist
 	public void preUpdate() {
 		this.valor = cantChicos * ConstantesApp.PRECIO_NINIO;
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDia() {
-		return dia;
-	}
-
-	public void setDia(String dia) {
-		this.dia = dia;
-	}
-
-	public String getMes() {
-		return mes;
-	}
-
-	public void setMes(String mes) {
-		this.mes = mes;
-	}
-
-	public String getAnio() {
-		return anio;
-	}
-
-	public void setAnio(String anio) {
-		this.anio = anio;
-	}
-
-	public int getCantChicos() {
-		return cantChicos;
-	}
-
-	public void setCantChicos(int cantChicos) {
-		this.cantChicos = cantChicos;
-	}
-
-	public double getValor() {
-		return valor;
-	}
-
-
-	public boolean isEstaReservada() {
-		return estaReservada;
-	}
-
-	public void setEstaReservada(boolean estaReservada) {
-		this.estaReservada = estaReservada;
-	}
-
-	public String getMailRerserva() {
-		return mailReserva;
-	}
-
-	public void setMailRerserva(String mailRerserva) {
-		this.mailReserva = mailRerserva;
-	}
-
+	}	
 	
 
 }
