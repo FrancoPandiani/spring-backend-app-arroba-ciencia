@@ -41,7 +41,8 @@ public class AppUserController {
 		return ResponseEntity.ok().build();
 	}
 	
-}   
+}
+
 @Data
 class RoleToUser{
 	private String userName;

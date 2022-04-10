@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import com.arrobaciencia.app.utils.ConstApp;
@@ -57,11 +56,6 @@ public class Event implements Serializable {
 	@Column(length = 5)
 	private boolean isReserved;
 	
-	@NotEmpty
-	@Email
-	@Column(length = 50, nullable=false)
-	private String mail;
-
 	@PreUpdate
 	@PrePersist
 	public void preUpdate() {

@@ -40,7 +40,7 @@ public class AppUserServiceImpl implements IAppUserService, UserDetailsService {
 
 		Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
 		user.getRoles().forEach(role -> {
-			authorities.add(new SimpleGrantedAuthority(role.getName()));
+			authorities.add(new SimpleGrantedAuthority("ROLE_"+role.getName()));
 
 		});
 
